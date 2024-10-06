@@ -2,11 +2,20 @@
 layout: page
 title: IRCTC cancellation calculator
 description: Calculate IRCTC cancellation charges
-img: assets/img/12.jpg
+img: assets/img/irctc.png
 importance: 1
 category: fun
-related_publications: true
+related_publications: false
 ---
+
+## Website
+Visit the website [here](https://irctc.aakashb.xyz/)
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/irctc.png" title="IRCTC cancellation calculator" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 
 ## Why
 
