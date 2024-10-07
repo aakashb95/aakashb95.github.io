@@ -68,7 +68,13 @@ layout: default
   {% if page.related_publications %}
     <h2>References</h2>
     <div class="publications">
-      {% bibliography --cited_in_order %}
+      {% if jekyll.plugins contains 'jekyll-scholar' %}
+        {% bibliography --cited_in_order %}
+      {% else %}
+        {% for publication in page.related_publications %}
+          <p>{{ publication }}</p>
+        {% endfor %}
+      {% endif %}
     </div>
   {% endif %}
 
