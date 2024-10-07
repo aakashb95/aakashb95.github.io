@@ -12,4 +12,3 @@ Hello World!
 This is my first blog post.
 
 Let's see how this goes!
-

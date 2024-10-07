@@ -9,6 +9,7 @@ related_publications: false
 ---
 
 ## Website
+
 Visit the website [here](https://irctc.aakashb.xyz/)
 
 <div class="row">
@@ -29,4 +30,5 @@ Frontend is NextJS, written with the help of Claude 3.5 Sonnet.
 Backend is a simple Node JS server that speaks to one of the RapidAPI IRCTC endpoints.
 
 ## Support
+
 If it is not working, please gmail me at aakashbakhle, or x.com/aakashb_95

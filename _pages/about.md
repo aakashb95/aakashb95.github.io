@@ -17,13 +17,13 @@ news: false # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
+
 Software Engineer. <br/>
 
-Grateful. Curious. Cannot imagine a life without sports, tech. Indian Railways fan. 
+Grateful. Curious. Cannot imagine a life without sports, tech. Indian Railways fan.
 
 ### Aim
 
 - Create products that people around me can easily use
 - Develop tools that solve my own needs and challenges
 - I find people like me, who would then use what I have made
-
