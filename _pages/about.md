@@ -26,4 +26,6 @@ Grateful. Curious. Cannot imagine a life without sports, tech. Indian Railways f
 
 - Create products that people around me can easily use
 - Develop tools that solve my own needs and challenges
-- I find people like me, who would then use what I have made
+- I find people like me, who would then use what I have made <br/>
+
+My resume is available [here](https://github.com/aakashb95/resume/blob/master/resume_aakash_bakhle.pdf).
