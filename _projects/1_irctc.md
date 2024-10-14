@@ -21,7 +21,7 @@ Visit the website [here](https://irctc.aakashb.xyz/)
 ## Why
 
 IRCTC website is a pain to use. Cancellation is a different pain altogether. You need to click cancel and only then do you see the charges.
-They do have a [link](https://contents.irctc.co.in/en/eticketCancel.html) that explains the charges but it is a pdf with conditions based on classes, time of departure and cancellation, etc. They have a [manual entry calculator](https://st2.indiarailinfo.com/kjfdsuiemjvcya0/0/3/3/5/1704335/2/refundcalculator5254.htm) as well.
+They do have a [link](https://contents.irctc.co.in/en/eticketCancel.html) that explains the charges but it is a pdf with conditions based on classes, time of departure and cancellation, etc. They have a [manual entry calculator](https://st2.indiarailinfo.com/kjfdsuiemjvcya0/0/3/3/5/1704335/2/refundcalculator5254.htm) as well, but it is a lot of effort.
 So I made this to calculate the charges for me.
 
 ## How
