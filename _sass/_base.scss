@@ -1329,3 +1329,28 @@ ninja-keys::part(ninja-input-wrapper) {
   object-fit: cover;
   object-position: center;
 }
+
+.anchor-link {
+  opacity: 0;
+  text-decoration: none;
+  color: var(--global-theme-color);
+  transition: opacity 0.2s ease-in-out;
+  margin-left: 0.5rem;
+  font-size: 0.8em;
+
+  &:hover {
+    text-decoration: none;
+    color: var(--global-theme-color);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &:hover .anchor-link {
+    opacity: 1;
+  }
+}
