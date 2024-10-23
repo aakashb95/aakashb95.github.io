@@ -18,7 +18,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Software Engineer. <br/>
+[1x Engineer](https://1x.engineer/) <br/>
 
 Grateful. Curious. Cannot imagine a life without sports, tech. Indian Railways fan.
 
