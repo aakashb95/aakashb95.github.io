@@ -35,7 +35,7 @@ First thing I do is go to Settings -> Trackpad -> Enable Tap to click.
 
 - [Docker client](https://orbstack.dev/download): I use OrbStack as a lightweight Docker client. It is super useful on M1 apps. This works fine for 99% of my use cases. The one time I needed some rosetta customization, I had to use the full Docker Desktop.
 - [Warp](https://www.warp.dev/): A new terminal app that supports multiple tabs, multiline editing, longer command history. I don't like that it asks for signup at the start because it is VC driven so 🤷‍♂️. Skill issue on my part.
-- [Cursor](https://www.cursor.com/): An IDE with AI capabilities. I am faster with this.
+- Cursor: An IDE with AI capabilities. I am faster with this.
 
 ### Web Browsing
 
