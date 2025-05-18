@@ -10,21 +10,26 @@ related_publications: false
 
 ## Website
 
-Visit the website [here](https://menu.aakashb.xyz/)
+Visit the website [here](https://menu.aakashb.xyz/) (decomissioned)
+
+Latest updated screenshots
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/what-to-eat-input.png" title="What to Eat - Input" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/what-to-eat-upd.png" title="What to Eat - Input" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/what-to-eat-chat.png" title="What to Eat - Chat" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/what-to-eat-chat-upd.png" title="What to Eat - Chat" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/what-to-eat-reco.png" title="What to Eat - Recommendations" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/what-to-eat-upd-output.png" title="What to Eat - Recommendations" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/what-to-eat-upd-history.png" title="What to Eat - History" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Left: Input page where you enter your preferences and menu details. Middle: Chat interface for interactive menu analysis. Right: AI-generated recommendations based on your dietary goals.
+    Left: Input page where you enter your preferences and menu details. Middle: Chat interface for interactive menu analysis. Right: AI-generated recommendations based on your dietary goals and chat history.
 </div>
 
 ## Why
