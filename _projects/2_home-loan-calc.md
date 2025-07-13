@@ -10,7 +10,7 @@ related_publications: false
 
 ## Website
 
-Visit the website [here](https://home-loan-calc.aakashb.xyz/)
+Visit the website [here](https://home-loan-calculator-aakashb95s-projects.vercel.app/)
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
