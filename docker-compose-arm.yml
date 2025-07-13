@@ -1,0 +1,16 @@
+# Docker compose file for ARM64 (Apple Silicon) machines
+services:
+  jekyll:
+    build: 
+      context: .
+      dockerfile: Dockerfile.arm
+      platforms:
+        - linux/arm64
+    ports:
+      - 8080:8080
+      - 35729:35729
+    volumes:
+      - .:/srv/jekyll
+    environment:
+      - JEKYLL_ENV=development
+    platform: linux/arm64
