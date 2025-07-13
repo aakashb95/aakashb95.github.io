@@ -9,6 +9,7 @@ This is a Jekyll-based academic website using the [al-folio theme](https://githu
 ## Development Commands
 
 ### Local Development (Docker - Recommended)
+
 ```bash
 # Pull latest image and start development server
 docker compose pull
@@ -28,13 +29,15 @@ The site will be available at `http://localhost:8080` with live reload enabled.
 
 **Architecture Issue Fix:**
 If you encounter `Could not find nokogiri-*-aarch64-linux` errors on Apple Silicon Macs, use the ARM-specific configuration:
+
 - Uses `docker-compose-arm.yml` with `Dockerfile.arm`
 - Forces regeneration of Gemfile.lock with correct ARM64 gems
 - Automatically removes conflicting x86_64 gems during build
 
 ### Manual Build Commands
+
 ```bash
-# Install dependencies 
+# Install dependencies
 bundle install
 pip install jupyter
 
@@ -51,6 +54,7 @@ purgecss -c purgecss.config.js
 ```
 
 ### Code Quality
+
 ```bash
 # Format code (Prettier)
 npx prettier . --check
@@ -60,6 +64,7 @@ npx prettier . --write
 ## Architecture
 
 ### Key Directories
+
 - `_config.yml` - Main Jekyll configuration with theme customization
 - `_pages/` - Main site pages (about, blog, projects)
 - `_posts/` - Blog posts in Markdown
@@ -73,6 +78,7 @@ npx prettier . --write
 - `_bibliography/` - BibTeX files for publications
 
 ### Content Management
+
 - **Blog posts**: Add Markdown files to `_posts/` with YAML front matter
 - **Projects**: Add Markdown files to `_projects/` with project metadata
 - **CV**: Edit `_data/cv.yml` or `assets/json/resume.json`
@@ -80,6 +86,7 @@ npx prettier . --write
 - **News**: Add files to `_news/` for homepage announcements
 
 ### Theme Features
+
 - Light/dark mode toggle
 - Responsive design with Bootstrap
 - MathJax for mathematical expressions
@@ -91,12 +98,14 @@ npx prettier . --write
 ## Deployment
 
 The site auto-deploys to GitHub Pages via `.github/workflows/deploy.yml`:
+
 - Triggers on pushes to master/main branch
 - Builds with Ruby 3.2.2 and Jekyll
 - Optimizes CSS with PurgeCSS
 - Deploys to `gh-pages` branch
 
 ### Manual Deployment
+
 Run the "Deploy site" workflow manually from GitHub Actions tab.
 
 ## Configuration Notes
@@ -110,6 +119,7 @@ Run the "Deploy site" workflow manually from GitHub Actions tab.
 ## Troubleshooting
 
 If encountering dependency issues with Docker:
+
 - Try rebuilding: `docker compose up --build --force-recreate`
 - Use slim image: `docker compose -f docker-compose-slim.yml up`
 - Check architecture compatibility (x86_64 vs arm64)
