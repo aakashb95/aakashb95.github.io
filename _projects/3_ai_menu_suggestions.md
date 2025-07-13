@@ -10,7 +10,7 @@ related_publications: false
 
 ## Website
 
-Visit the website [here](https://menu.aakashb.xyz/) (decomissioned)
+~~Visit the website [here](https://menu.aakashb.xyz/)~~ (decommissioned)
 
 Latest updated screenshots
 
