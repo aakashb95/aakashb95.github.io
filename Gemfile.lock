@@ -171,7 +171,7 @@ GEM
       gemoji (>= 3, < 5)
       html-pipeline (~> 2.2)
       jekyll (>= 3.0, < 5.0)
-    json (2.12.2)
+    json (2.13.0)
     json-minify (0.0.3)
       json (> 0)
     kramdown (2.5.1)
@@ -309,4 +309,4 @@ DEPENDENCIES
   webrick
 
 BUNDLED WITH
-   2.6.9
+   2.7.0
