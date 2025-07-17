@@ -84,13 +84,13 @@ With full autonomy, it created a simple version with pure HTML, CSS and JS.
 
 Now I had a list of features to implement.
 
-##### Building
+#### Building
 
 Claude code keeps track of how much context window has been used up for a task. At some threshold, it says use `/compact` to summarize the context to have more context window available. I almost never used that. The moment I saw that suggestion, I would ask it to update claude.md with the latest changes and then create a new session. I used `/clear` very often.
 
 Each new feature or improvement, would be in a separate branch, built on top of a latest working branch. I had claude do all of this.
 
-##### Quality of responses
+#### Quality of responses
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Using Claude Code either feels like God is writing your code or a monkey is and there’s no in-between.</p>&mdash; Mckay Wrigley (@mckaywrigley) <a href="https://twitter.com/mckaywrigley/status/1943722608371151222?ref_src=twsrc%5Etfw">July 11, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -102,9 +102,10 @@ What caught my eye was how it grepped the filesystem, it can just find the file 
 
 What would be better - RAG or giving an agent autonomy to explore the search space? Needs an experiment and would be an interesting post for another day.
 
-##### Providing more context
+#### Providing more context
 
-You can use the `@filename` to refer to a file in the project. Cursor habits. <br/>
+
+You can use the `@filename` to refer to a file in the project. Cursor habits. <br>
 On a mac: <br/>
 `cmd+v` works for pasting text into the chat. <br/>
 `control+v` pastes images.<br/>
