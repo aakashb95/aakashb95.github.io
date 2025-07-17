@@ -19,7 +19,7 @@ Check out the [Badam Satti project]({{ site.baseurl }}/projects/1_badam_satti/) 
 - Pasted that into claude code and asked it to code it out
 - It could not one-shot it so I started giving step by step instructions. One feature at a time so it doesn't get lost in the context.
 - For every code change, I tested it manually. Asked it to commit changes and also update the Claude.md file with latest changes, TODOs for future and a summary so far.
-- Used keywords like DEEPTHINK, ULTRATHINK to really get more out of the model.
+- Used keywords like `DEEPTHINK`, `ULTRATHINK` to really get more out of the model.
 - Since at every iteration Claude.md was updated, whenever I found context was ballooning in a session or it was going off track, I started a fresh session.
 - Finally, used [playwright-mcp](https://www.npmjs.com/package/@playwright/mcp) to give it access to the game and watched it play and debug some edge cases :D
 
