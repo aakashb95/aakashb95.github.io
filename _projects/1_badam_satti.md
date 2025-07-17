@@ -99,4 +99,4 @@ Built with React + Node.js + Socket.io featuring: <br/>
 
 ### How this was built
 
-Check out the [Badam Satti project]({{ site.baseurl }}/posts/2025-07-16-vibe-coding-a-cards-game/) for more details.
+Check out the [Badam Satti project]({{ site.baseurl }}/blog/2025/vibe-coding-a-cards-game/) for more details.
