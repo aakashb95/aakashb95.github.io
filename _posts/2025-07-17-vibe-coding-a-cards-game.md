@@ -104,7 +104,6 @@ What would be better - RAG or giving an agent autonomy to explore the search spa
 
 #### Providing more context
 
-
 You can use the `@filename` to refer to a file in the project. Cursor habits. <br>
 On a mac: <br/>
 `cmd+v` works for pasting text into the chat. <br/>
