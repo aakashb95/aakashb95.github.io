@@ -41,8 +41,6 @@ repo_trophies:
 # will use title and url fields
 # Take a look to https://github.com/jekyll/jekyll-feed for more customization
 
-rss_icon: false
-
 # -----------------------------------------------------------------------------
 # Layout
 # -----------------------------------------------------------------------------
@@ -111,6 +109,7 @@ work_url: # work page URL
 x_username: aakashb_95 # your X handle
 youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 zotero_username: # your zotero username
+rss_icon: true
 
 contact_note: >
   Best way to reach me is to drop a note to my gmail.
@@ -143,7 +142,7 @@ pagination:
   enabled: true
 
 related_blog_posts:
-  enabled: false
+  enabled: true
   max_related: 5
 
 # Giscus comments (RECOMMENDED)
