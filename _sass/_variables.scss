@@ -5,7 +5,7 @@
 
 @use "sass:color";
 
-// Colors
+// Colors - Warm Editorial Palette
 $red-color: #ff3636 !default;
 $red-color-dark: #b71c1c !default;
 $orange-color: #f29105 !default;
@@ -23,6 +23,21 @@ $light-purple-color: color.adjust($purple-color, $lightness: 25%);
 $pink-color: #f92080 !default;
 $pink-color-light: #ffdddd !default;
 $yellow-color: #efcc00 !default;
+
+// Technical refined palette - Grey + Sage Green + Navy
+$sage-green: #7C9885;
+$sage-green-light: #A4BDB0;
+$sage-green-dark: #5A7765;
+$navy: #5B7C99;
+$navy-light: #7A96B0;
+$navy-dark: #3D5A75;
+$grey-bg: #F5F5F7;
+$grey-card: #FAFAFA;
+$grey-mid: #9CA3AF;
+$grey-text: #6B7280;
+$charcoal: #1F2937;
+$charcoal-light: #374151;
+$off-white: #FFFFFF;
 
 $grey-color: #828282 !default;
 $grey-color-light: color.adjust($grey-color, $lightness: 40%);

@@ -1,0 +1,385 @@
+/*******************************************************************************
+ * Technical Refined Design System
+ * Clean, minimalist, professional aesthetic
+ ******************************************************************************/
+
+// Import technical fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+/*******************************************************************************
+ * Typography - Technical and Professional
+ ******************************************************************************/
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6,
+.post-title,
+.header-bar h1 {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--global-text-color);
+}
+
+h1 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+// Code typography
+code, pre {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9em;
+  letter-spacing: -0.01em;
+}
+
+/*******************************************************************************
+ * Clean Minimalist Base
+ ******************************************************************************/
+
+body {
+  background-color: var(--global-bg-color);
+}
+
+/*******************************************************************************
+ * Minimal Card Styling
+ ******************************************************************************/
+
+.card {
+  border-radius: 8px;
+  border: 1px solid var(--global-divider-color);
+  box-shadow: 0 1px 3px rgba(31, 41, 55, 0.04);
+  transition: all 0.25s ease;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(124, 152, 133, 0.12);
+    border-color: var(--global-theme-color);
+  }
+}
+
+/*******************************************************************************
+ * Clean Link Styling
+ ******************************************************************************/
+
+a {
+  transition: color 0.2s ease;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--global-hover-color);
+  }
+}
+
+/*******************************************************************************
+ * Subtle Animations
+ ******************************************************************************/
+
+// Minimal fade in for content
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.page-content {
+  animation: fadeIn 0.3s ease;
+}
+
+/*******************************************************************************
+ * Clean Buttons
+ ******************************************************************************/
+
+.btn,
+button,
+input[type="submit"] {
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  padding: 0.625rem 1.25rem;
+  transition: all 0.2s ease;
+  border: 1px solid var(--global-theme-color);
+
+  &:hover {
+    background: var(--global-theme-color);
+    color: var(--global-hover-text-color);
+    border-color: var(--global-theme-color);
+  }
+}
+
+/*******************************************************************************
+ * Clean Elevation
+ ******************************************************************************/
+
+.navbar {
+  box-shadow: 0 1px 3px rgba(31, 41, 55, 0.06);
+  backdrop-filter: blur(8px);
+  background-color: rgba(245, 245, 247, 0.95);
+
+  html[data-theme="dark"] & {
+    background-color: rgba(17, 24, 39, 0.95);
+  }
+}
+
+footer.fixed-bottom,
+footer.sticky-bottom {
+  box-shadow: 0 -1px 3px rgba(31, 41, 55, 0.06);
+}
+
+/*******************************************************************************
+ * Clean Profile Styling
+ ******************************************************************************/
+
+.profile {
+  img {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(31, 41, 55, 0.08);
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(124, 152, 133, 0.15);
+    }
+  }
+}
+
+/*******************************************************************************
+ * Minimal Blockquotes
+ ******************************************************************************/
+
+blockquote {
+  border-left: 3px solid var(--global-theme-color);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  background: rgba(124, 152, 133, 0.05);
+  font-size: 1rem;
+  color: var(--global-text-color-light);
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*******************************************************************************
+ * Simple Hover States
+ ******************************************************************************/
+
+.social .contact-icons a {
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--global-theme-color);
+  }
+}
+
+/*******************************************************************************
+ * Clean Blog Post Styling
+ ******************************************************************************/
+
+.post {
+  .post-title {
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+
+  img {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(31, 41, 55, 0.08);
+    margin: 2rem 0;
+  }
+}
+
+/*******************************************************************************
+ * Clean Project Cards
+ ******************************************************************************/
+
+.projects {
+  .card {
+    background: var(--global-card-bg-color);
+
+    .card-img-top {
+      transition: opacity 0.2s ease;
+    }
+
+    &:hover .card-img-top {
+      opacity: 0.9;
+    }
+
+    .card-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-top: 1rem;
+    }
+  }
+}
+
+/*******************************************************************************
+ * Clean Navigation
+ ******************************************************************************/
+
+.navbar {
+  .navbar-brand {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-link {
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &.active {
+      color: var(--global-theme-color);
+    }
+  }
+}
+
+/*******************************************************************************
+ * Minimal Page Header
+ ******************************************************************************/
+
+.header-bar {
+  background: transparent;
+  border-bottom: 1px solid var(--global-divider-color);
+  padding: 2.5rem 0 3rem;
+  margin-bottom: 2.5rem;
+
+  h1 {
+    font-weight: 700;
+    color: var(--global-text-color);
+  }
+}
+
+/*******************************************************************************
+ * Responsive Typography Scaling
+ ******************************************************************************/
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+
+  .header-bar {
+    padding: 2rem 0 2.5rem;
+
+    h1 {
+      font-size: 3rem;
+    }
+  }
+}
+
+/*******************************************************************************
+ * Clean Tag & Category Styling
+ ******************************************************************************/
+
+.tag-category-list {
+  a, li {
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgba(124, 152, 133, 0.1);
+      color: var(--global-theme-color);
+    }
+  }
+}
+
+/*******************************************************************************
+ * Clean Code Blocks
+ ******************************************************************************/
+
+pre {
+  border-radius: 6px;
+  border: 1px solid var(--global-divider-color);
+  padding: 1.25rem;
+  overflow-x: auto;
+
+  code {
+    padding: 0;
+    background: transparent;
+    border: none;
+  }
+}
+
+code {
+  border-radius: 3px;
+  padding: 0.2em 0.4em;
+  font-size: 0.875em;
+  border: 1px solid var(--global-divider-color);
+}
+
+/*******************************************************************************
+ * Back to Top Button
+ ******************************************************************************/
+
+#back-to-top {
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(124, 152, 133, 0.2);
+  transition: all 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(124, 152, 133, 0.3);
+  }
+}
+
+/*******************************************************************************
+ * Selection Styling
+ ******************************************************************************/
+
+::selection {
+  background: rgba(124, 152, 133, 0.3);
+  color: var(--global-text-color);
+}
+
+::-moz-selection {
+  background: rgba(124, 152, 133, 0.3);
+  color: var(--global-text-color);
+}
