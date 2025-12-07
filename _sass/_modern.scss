@@ -4,14 +4,19 @@
  ******************************************************************************/
 
 // Import technical fonts
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
 
 /*******************************************************************************
  * Typography - Technical and Professional
  ******************************************************************************/
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
   font-weight: 400;
   line-height: 1.7;
   letter-spacing: -0.011em;
@@ -19,10 +24,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .post-title,
 .header-bar h1 {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.02em;
@@ -61,8 +71,9 @@ h4 {
 }
 
 // Code typography
-code, pre {
-  font-family: 'JetBrains Mono', monospace;
+code,
+pre {
+  font-family: "JetBrains Mono", monospace;
   font-size: 0.9em;
   letter-spacing: -0.01em;
 }
@@ -132,7 +143,7 @@ a {
 button,
 input[type="submit"] {
   border-radius: 6px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
   letter-spacing: -0.01em;
   padding: 0.625rem 1.25rem;
@@ -249,7 +260,7 @@ blockquote {
     }
 
     .card-title {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: "JetBrains Mono", monospace;
       font-weight: 600;
       font-size: 1.25rem;
       margin-top: 1rem;
@@ -263,7 +274,7 @@ blockquote {
 
 .navbar {
   .navbar-brand {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: "JetBrains Mono", monospace;
     font-weight: 600;
     font-size: 1.25rem;
     letter-spacing: -0.02em;
@@ -320,7 +331,8 @@ blockquote {
  ******************************************************************************/
 
 .tag-category-list {
-  a, li {
+  a,
+  li {
     border-radius: 4px;
     padding: 0.5rem 1rem;
     transition: all 0.2s ease;
