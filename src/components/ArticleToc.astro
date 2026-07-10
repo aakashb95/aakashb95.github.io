@@ -1,0 +1,78 @@
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  headings: Heading[];
+}
+
+const items = Astro.props.headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
+---
+
+<nav class="article-toc" aria-label="Contents">
+  <p>contents</p>
+  <ol>
+    {
+      items.map((heading) => (
+        <li class:list={{ nested: heading.depth === 3 }}>
+          <a href={`#${heading.slug}`}>{heading.text}</a>
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+
+<details class="article-toc-mobile">
+  <summary>contents</summary>
+  <ol>
+    {
+      items.map((heading) => (
+        <li class:list={{ nested: heading.depth === 3 }}>
+          <a href={`#${heading.slug}`}>{heading.text}</a>
+        </li>
+      ))
+    }
+  </ol>
+</details>
+
+<script>
+  const toc = document.querySelector<HTMLElement>(".article-toc");
+
+  if (toc) {
+    const links = [...toc.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')];
+    const headings = links
+      .map((link) => document.getElementById(link.hash.slice(1)))
+      .filter((heading): heading is HTMLElement => Boolean(heading));
+
+    headings.forEach((heading) => {
+      if (heading.querySelector(".heading-anchor")) return;
+      const anchor = document.createElement("a");
+      anchor.className = "heading-anchor";
+      anchor.href = `#${heading.id}`;
+      anchor.textContent = "#";
+      anchor.setAttribute("aria-label", `Link to ${heading.textContent?.trim() ?? "this section"}`);
+      heading.append(anchor);
+    });
+
+    const setCurrent = (id: string) => {
+      links.forEach((link) => {
+        if (link.hash === `#${id}`) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+    };
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const visible = entries.find((entry) => entry.isIntersecting);
+          if (visible) setCurrent((visible.target as HTMLElement).id);
+        },
+        { rootMargin: "-15% 0px -75%", threshold: 0 }
+      );
+      headings.forEach((heading) => observer.observe(heading));
+    }
+  }
+</script>

@@ -18,6 +18,7 @@ const { Content } = await render(project);
   title={project.data.title}
   description={project.data.description}
   image={assetUrl(project.data.img)}
+  eyebrow={project.data.status === "decommissioned" ? "decommissioned" : undefined}
   backHref="/projects/"
   backLabel="projects"
 >

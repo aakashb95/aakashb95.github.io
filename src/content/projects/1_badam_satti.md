@@ -1,7 +1,6 @@
 ---
-status: live
-featured: true
-live_url: https://badam7.aakashb.xyz/
+status: decommissioned
+featured: false
 title: Badam Satti
 description: A classic cards game to be played with friends and family
 img: /img/badam-satti/desktop-dealt-cards.png
@@ -9,7 +8,7 @@ importance: 2
 category: fun
 ---
 
-[Badam Satti](https://badam7.aakashb.xyz/) is a classic card game designed for friends and family to enjoy together. It is best played in person and with more than 4 players, but since not everyone is physically around, I decided to vibe code this into an online multiplayer game.
+Badam Satti is a classic card game designed for friends and family to enjoy together. It is best played in person and with more than 4 players, but since not everyone is physically around, I decided to vibe code this into an online multiplayer game.
 <br>
 
 ## Game Features

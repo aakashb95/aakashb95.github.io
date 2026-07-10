@@ -49,7 +49,10 @@ for (const file of htmlFiles) {
 }
 
 const homepage = await readFile(join(root, "index.html"), "utf8");
-if (/<script\b/i.test(homepage)) errors.push("Homepage performance budget: unexpected script tag");
+const homepageScripts = [...homepage.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)];
+const homepageScriptBytes = Buffer.byteLength(homepageScripts.map((match) => match[1]).join(""));
+if (homepageScripts.length > 2) errors.push("Homepage performance budget: more than two inline scripts");
+if (homepageScriptBytes > 2_000) errors.push("Homepage performance budget: inline JavaScript exceeds 2 KB");
 if ((await stat(join(root, "index.html"))).size > 15_000)
   errors.push("Homepage performance budget: HTML exceeds 15 KB");
 

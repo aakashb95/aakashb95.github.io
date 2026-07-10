@@ -1,20 +1,33 @@
 ---
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
-import { postSlug } from "../../../lib/content";
+import { formatDate, postSlug, postUrl } from "../../../lib/content";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog", ({ data }) => !data.draft);
-  return posts.map((post) => ({
-    params: { year: String(post.data.date.getUTCFullYear()), slug: postSlug(post) },
-    props: { post },
-  }));
+  return posts.map((post) => {
+    const related = posts
+      .filter((candidate) => candidate.id !== post.id)
+      .map((candidate) => ({
+        post: candidate,
+        sharedTags: candidate.data.tags.filter((tag) => post.data.tags.includes(tag)).length,
+      }))
+      .sort((a, b) => b.sharedTags - a.sharedTags || b.post.data.date.valueOf() - a.post.data.date.valueOf())
+      .slice(0, 3)
+      .map(({ post: relatedPost }) => relatedPost);
+
+    return {
+      params: { year: String(post.data.date.getUTCFullYear()), slug: postSlug(post) },
+      props: { post, related },
+    };
+  });
 }
 interface Props {
   post: CollectionEntry<"blog">;
+  related: CollectionEntry<"blog">[];
 }
-const { post } = Astro.props;
-const { Content } = await render(post);
+const { post, related } = Astro.props;
+const { Content, headings } = await render(post);
 ---
 
 <ArticleLayout
@@ -25,6 +38,22 @@ const { Content } = await render(post);
   image={post.data.cover}
   backHref="/blog/"
   backLabel="blog"
+  headings={headings}
 >
   <Content />
+  {
+    related.length > 0 && (
+      <section class="related-posts" slot="after">
+        <h2>more to read</h2>
+        <ul>
+          {related.map((relatedPost) => (
+            <li>
+              <a href={postUrl(relatedPost)}>{relatedPost.data.title}</a>
+              <time datetime={relatedPost.data.date.toISOString()}>{formatDate(relatedPost.data.date)}</time>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
 </ArticleLayout>

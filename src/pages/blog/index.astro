@@ -5,6 +5,7 @@ import { formatDate, postUrl } from "../../lib/content";
 const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
+const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort();
 ---
 
 <BaseLayout title="zugzwang" description="Thoughts, learnings, rants">
@@ -12,6 +13,9 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
     <h1>zugzwang</h1>
     <p>Thoughts, learnings, rants</p>
   </header>
+  <nav class="tag-nav" aria-label="Browse writing by tag">
+    {tags.map((tag) => <a href={`/blog/tag/${encodeURIComponent(tag)}/`}>#{tag}</a>)}
+  </nav>
   <div class="writing-list" style="margin-bottom: 8rem">
     {
       posts.map((post) => (

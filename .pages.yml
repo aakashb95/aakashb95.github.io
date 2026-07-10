@@ -101,7 +101,7 @@ content:
         type: select
         required: true
         options:
-          values: [live, experiment, archived]
+          values: [live, experiment, archived, decommissioned]
       - name: importance
         label: Sort order
         type: number
