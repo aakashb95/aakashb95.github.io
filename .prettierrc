@@ -1,3 +1,7 @@
-plugins: ["@shopify/prettier-plugin-liquid"]
-printWidth: 150
+plugins: ["@shopify/prettier-plugin-liquid", "prettier-plugin-astro"]
+printWidth: 120
 trailingComma: "es5"
+overrides:
+  - files: "*.astro"
+    options:
+      parser: astro

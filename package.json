@@ -1,6 +1,32 @@
 {
+  "name": "aakashb95-portfolio",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test": "npm run build && node scripts/check-build.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "deploy": "npm run build && npx wrangler@latest deploy"
+  },
+  "dependencies": {
+    "@astrojs/rss": "latest",
+    "@astrojs/sitemap": "latest",
+    "@fontsource-variable/ibm-plex-sans": "latest",
+    "@fontsource-variable/newsreader": "latest",
+    "@fontsource/ibm-plex-mono": "latest",
+    "astro": "latest",
+    "sharp": "latest"
+  },
   "devDependencies": {
+    "@astrojs/check": "latest",
     "@shopify/prettier-plugin-liquid": "1.4.0",
-    "prettier": "3.1.1"
+    "prettier": "latest",
+    "prettier-plugin-astro": "latest",
+    "typescript": "latest"
   }
 }

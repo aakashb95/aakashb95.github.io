@@ -1,0 +1,84 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { assetUrl, formatDate, postUrl, projectUrl } from "../lib/content";
+
+const projects = (await getCollection("projects")).sort((a, b) => a.data.importance - b.data.importance);
+const featuredProjects = [...projects.filter((project) => project.data.featured), ...projects]
+  .filter((project, index, all) => all.findIndex((item) => item.id === project.id) === index)
+  .slice(0, 3);
+const posts = (await getCollection("blog", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Engineer · Builder · Mumbai</p>
+      <h1>Making useful things for <em>real people.</em></h1>
+    </div>
+    <div class="hero-aside">
+      <p>
+        Grateful and curious. I build small products, study intelligent systems, play sports, and remain irrationally
+        fond of Indian Railways.
+      </p>
+      <a class="text-link" href="mailto:aakashbakhle@gmail.com">Start a conversation</a>
+    </div>
+  </section>
+
+  <div class="signal-strip full-bleed" aria-label="Current focus">
+    <span>01 / Build</span><span>Products · AI systems · Experiments</span><span>Always curious</span>
+  </div>
+
+  <section class="home-section">
+    <header class="section-heading">
+      <div><p class="kicker">Selected work</p><h2>Things I’ve made.</h2></div>
+      <p>Products born from annoyances, curiosity, or the simple belief that a useful tool should exist.</p>
+    </header>
+    <div>
+      {
+        featuredProjects.map((project, index) => (
+          <a class="project-feature" href={projectUrl(project)}>
+            <div class="project-image">
+              <img src={assetUrl(project.data.img)} alt="" loading="lazy" />
+            </div>
+            <div class="project-copy">
+              <div>
+                <>
+                  <span class="project-number">0{index + 1}</span>
+                  <h3>{project.data.title}</h3>
+                  <p>{project.data.description}</p>
+                </>
+              </div>
+              <span class="project-arrow" aria-hidden="true">
+                ↗
+              </span>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+    <p><a class="text-link" href="/projects/">View every project</a></p>
+  </section>
+
+  <section class="home-section">
+    <header class="section-heading">
+      <div><p class="kicker">Latest writing</p><h2>Notes from the workbench.</h2></div>
+      <p>Longer thoughts on software, AI, experiments, and the tools that shape how I work.</p>
+    </header>
+    <div class="writing-list">
+      {
+        posts.map((post) => (
+          <a class="writing-row" href={postUrl(post)}>
+            <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+            <>
+              <h3>{post.data.title}</h3>
+              <span class="row-arrow">↗</span>
+            </>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { assetUrl, projectUrl } from "../../lib/content";
+const projects = (await getCollection("projects")).sort((a, b) => a.data.importance - b.data.importance);
+---
+
+<BaseLayout title="Projects" description="Products and experiments built by Aakash Bakhle.">
+  <header class="page-header">
+    <p class="eyebrow">Project index / {String(projects.length).padStart(2, "0")}</p><h1>
+      Built to answer a question.
+    </h1><p class="page-intro">
+      Some are practical, some playful. Every project started with a problem close enough to care about.
+    </p>
+  </header>
+  <div class="projects-grid">
+    {
+      projects.map((project) => (
+        <a class="project-card" href={projectUrl(project)}>
+          <div class="project-card-image">
+            <img src={assetUrl(project.data.img)} alt="" loading="lazy" />
+          </div>
+          <div class="project-card-copy">
+            <>
+              <div class="project-card-meta">
+                <>
+                  <span>{project.data.category}</span>
+                  <span>{project.data.status}</span>
+                </>
+              </div>
+              <h2>{project.data.title}</h2>
+              <p>{project.data.description}</p>
+            </>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</BaseLayout>

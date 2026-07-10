@@ -1,0 +1,30 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import PostArchive from "../../../components/PostArchive.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  const years = [...new Set(posts.map((post) => post.data.date.getUTCFullYear()))];
+  return years.map((year) => ({
+    params: { year: String(year) },
+    props: {
+      year,
+      posts: posts
+        .filter((post) => post.data.date.getUTCFullYear() === year)
+        .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()),
+    },
+  }));
+}
+interface Props {
+  year: number;
+  posts: CollectionEntry<"blog">[];
+}
+const { year, posts } = Astro.props;
+---
+
+<PostArchive
+  title={`Writing from ${year}`}
+  eyebrow="Year archive"
+  description={`Field notes and essays published in ${year}.`}
+  posts={posts}
+/>

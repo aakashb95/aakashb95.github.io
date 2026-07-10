@@ -9,5 +9,7 @@ _site
 Gemfile.lock
 assets/libs/
 node_modules/
+dist/
+.astro/
 vendor
 .idea
