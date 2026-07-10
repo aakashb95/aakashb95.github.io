@@ -1,0 +1,35 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { assetUrl, projectSlug } from "../../lib/content";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({ params: { slug: projectSlug(project) }, props: { project } }));
+}
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<ArticleLayout
+  title={project.data.title}
+  description={project.data.description}
+  image={assetUrl(project.data.img)}
+  eyebrow={`Project · ${project.data.status}`}
+  backHref="/projects/"
+  backLabel="All projects"
+>
+  {
+    project.data.live_url && (
+      <p>
+        <a class="text-link" href={project.data.live_url}>
+          Visit the project
+        </a>
+      </p>
+    )
+  }
+  <Content />
+</ArticleLayout>

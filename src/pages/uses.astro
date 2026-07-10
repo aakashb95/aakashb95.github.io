@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const hardware = [
+  [
+    "MacBook Pro 16″",
+    "M1 Pro and the primary development machine. Comfortable with Docker, local models, and too many windows.",
+  ],
+  ["Magic Keyboard", "A low-profile, uncluttered keyboard for long writing and coding sessions."],
+  ["LG UltraWide 34″", "A curved canvas with enough room for code, documentation, and a terminal side by side."],
+  ["Sony WH-1000XM4", "Noise cancellation for focus, with battery life that rarely becomes a consideration."],
+  ["Herman Miller Aeron", "The unglamorous but worthwhile investment in being able to sit and think comfortably."],
+];
+---
+
+<BaseLayout title="Uses" description="Hardware, software, and tools Aakash uses.">
+  <header class="page-header">
+    <p class="eyebrow">Tools / living document</p><h1>The things behind the things.</h1><p class="page-intro">
+      A practical inventory of the hardware and software that powers my daily work.
+    </p>
+  </header>
+  <section class="uses-grid">
+    <h2>Hardware</h2><div class="uses-list">
+      {
+        hardware.map(([name, description]) => (
+          <div class="uses-item">
+            <>
+              <strong>{name}</strong>
+              <p>{description}</p>
+            </>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

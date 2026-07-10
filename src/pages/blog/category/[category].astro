@@ -1,0 +1,30 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import PostArchive from "../../../components/PostArchive.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  const categories = [...new Set(posts.flatMap((post) => post.data.tags))];
+  return categories.map((category) => ({
+    params: { category },
+    props: {
+      category,
+      posts: posts
+        .filter((post) => post.data.tags.includes(category))
+        .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()),
+    },
+  }));
+}
+interface Props {
+  category: string;
+  posts: CollectionEntry<"blog">[];
+}
+const { category, posts } = Astro.props;
+---
+
+<PostArchive
+  title={`Notes on ${category}`}
+  eyebrow="Category archive"
+  description={`Writing filed under ${category}.`}
+  posts={posts}
+/>

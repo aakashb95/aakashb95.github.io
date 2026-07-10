@@ -1,0 +1,48 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import { postSlug } from "../../../lib/content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { year: String(post.data.date.getUTCFullYear()), slug: postSlug(post) },
+    props: { post },
+  }));
+}
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+---
+
+<ArticleLayout
+  title={post.data.title}
+  description={post.data.description}
+  date={post.data.date}
+  tags={post.data.tags}
+  image={post.data.cover}
+  backHref="/blog/"
+  backLabel="All writing"
+>
+  {
+    headings.length > 4 && (
+      <details>
+        <>
+          <summary>On this page</summary>
+          <ol>
+            {headings
+              .filter((heading) => heading.depth <= 3)
+              .map((heading) => (
+                <li>
+                  <a href={`#${heading.slug}`}>{heading.text}</a>
+                </li>
+              ))}
+          </ol>
+        </>
+      </details>
+    )
+  }
+  <Content />
+</ArticleLayout>
