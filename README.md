@@ -28,4 +28,4 @@ The deployment workflow expects these GitHub Actions repository secrets:
 - `CLOUDFLARE_ACCOUNT_ID`
 - `CLOUDFLARE_API_TOKEN` with Workers Scripts edit and Workers Routes edit permissions for `aakashb.xyz`
 
-`wrangler.jsonc` deploys the generated `dist` directory as static assets and attaches `www.aakashb.xyz` as the custom domain. Static requests do not invoke Worker code.
+`wrangler.jsonc` deploys the generated `dist` directory as static assets and attaches it to the `www.aakashb.xyz/*` zone route. The existing proxied DNS record remains as a rollback origin underneath the Worker. Static asset requests do not invoke Worker code.
