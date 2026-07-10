@@ -14,7 +14,7 @@ interface Props {
   post: CollectionEntry<"blog">;
 }
 const { post } = Astro.props;
-const { Content, headings } = await render(post);
+const { Content } = await render(post);
 ---
 
 <ArticleLayout
@@ -26,23 +26,5 @@ const { Content, headings } = await render(post);
   backHref="/blog/"
   backLabel="blog"
 >
-  {
-    headings.length > 4 && (
-      <details>
-        <>
-          <summary>On this page</summary>
-          <ol>
-            {headings
-              .filter((heading) => heading.depth <= 3)
-              .map((heading) => (
-                <li>
-                  <a href={`#${heading.slug}`}>{heading.text}</a>
-                </li>
-              ))}
-          </ol>
-        </>
-      </details>
-    )
-  }
   <Content />
 </ArticleLayout>
