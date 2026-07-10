@@ -1,17 +1,14 @@
 ---
 const currentPath = Astro.url.pathname;
 const links = [
-  { href: "/projects/", label: "Projects" },
-  { href: "/blog/", label: "Writing" },
-  { href: "/uses/", label: "Uses" },
+  { href: "/blog/", label: "blog" },
+  { href: "/projects/", label: "projects" },
+  { href: "/uses/", label: "uses" },
 ];
 ---
 
 <header class="site-header">
-  <a class="wordmark" href="/" aria-label="Aakash Bakhle, home">
-    <span class="wordmark-mark">AB</span>
-    <span class="wordmark-name">Aakash Bakhle</span>
-  </a>
+  <a class="wordmark" href="/" aria-label="Aakash Bakhle, home"> Aakash Bakhle </a>
   <nav aria-label="Primary navigation">
     {
       links.map((link) => (

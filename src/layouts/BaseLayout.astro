@@ -1,8 +1,4 @@
 ---
-import "@fontsource-variable/newsreader/index.css";
-import "@fontsource-variable/ibm-plex-sans/index.css";
-import "@fontsource/ibm-plex-mono/400.css";
-import "@fontsource/ibm-plex-mono/600.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
@@ -15,8 +11,8 @@ interface Props {
 }
 
 const {
-  title = "Aakash Bakhle — Engineer & Builder",
-  description = "Engineer, curious builder, sports enthusiast, and Indian Railways fan.",
+  title = "Aakash Bakhle",
+  description = "Hi, I'm Aakash, welcome to my corner of the internet.",
   image = "/img/prof_pic_color.png",
   article = false,
 } = Astro.props;
@@ -31,7 +27,7 @@ const pageTitle = title.includes("Aakash") ? title : `${title} — Aakash Bakhle
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#0a46d8" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" type="application/rss+xml" title="Aakash Bakhle" href="/rss.xml" />

@@ -22,9 +22,4 @@ interface Props {
 const { tag, posts } = Astro.props;
 ---
 
-<PostArchive
-  title={`Notes on ${tag}`}
-  eyebrow="Tag archive"
-  description={`Writing filed under ${tag}.`}
-  posts={posts}
-/>
+<PostArchive title={`#${tag}`} posts={posts} />

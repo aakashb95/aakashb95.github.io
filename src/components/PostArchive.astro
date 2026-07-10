@@ -5,18 +5,14 @@ import { formatDate, postUrl } from "../lib/content";
 
 interface Props {
   title: string;
-  eyebrow: string;
-  description: string;
   posts: CollectionEntry<"blog">[];
 }
-const { title, eyebrow, description, posts } = Astro.props;
+const { title, posts } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title}>
   <header class="page-header">
-    <p class="eyebrow">{eyebrow} / {String(posts.length).padStart(2, "0")}</p><h1>{title}</h1><p class="page-intro">
-      {description}
-    </p>
+    <h1>{title}</h1>
   </header>
   <div class="writing-list" style="margin-bottom: 8rem">
     {
@@ -25,7 +21,9 @@ const { title, eyebrow, description, posts } = Astro.props;
           <>
             <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
             <h3>{post.data.title}</h3>
-            <span class="row-arrow">↗</span>
+            <span class="row-arrow" aria-hidden="true">
+              →
+            </span>
           </>
         </a>
       ))
