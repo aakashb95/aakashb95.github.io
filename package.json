@@ -9,8 +9,8 @@
     "preview": "astro preview",
     "check": "astro check",
     "test": "npm run build && node scripts/check-build.mjs",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
+    "format": "prettier --write 'src/**/*.{astro,ts,js,css,md}' 'scripts/**/*.mjs' astro.config.mjs package.json tsconfig.json wrangler.jsonc .pages.yml .github/workflows/{deploy,broken-links,prettier}.yml README.md",
+    "format:check": "prettier --check 'src/**/*.{astro,ts,js,css,md}' 'scripts/**/*.mjs' astro.config.mjs package.json tsconfig.json wrangler.jsonc .pages.yml .github/workflows/{deploy,broken-links,prettier}.yml README.md",
     "deploy": "npm run build && npx wrangler@latest deploy"
   },
   "dependencies": {
@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "@astrojs/check": "latest",
-    "@shopify/prettier-plugin-liquid": "1.4.0",
     "prettier": "latest",
     "prettier-plugin-astro": "latest",
     "typescript": "latest"
