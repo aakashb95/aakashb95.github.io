@@ -132,17 +132,75 @@ main {
 }
 
 .theme-toggle {
+  position: relative;
+  width: 1.75rem;
+  height: 1.75rem;
   padding: 0;
   border: 0;
+  border-radius: 50%;
   background: transparent;
   color: var(--muted);
   cursor: pointer;
-  font: inherit;
-  font-size: 0.9rem;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
 }
 
 .theme-toggle:hover {
+  background: var(--code);
   color: var(--text);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+.theme-icon,
+.theme-icon svg {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 1rem;
+  height: 1rem;
+}
+
+.theme-icon svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+  transition:
+    opacity 180ms ease,
+    transform 220ms ease;
+}
+
+.theme-icon-moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.theme-icon-sun {
+  opacity: 0;
+  transform: rotate(-50deg) scale(0.55);
+}
+
+.theme-toggle[data-theme="dark"] .theme-icon-moon {
+  opacity: 0;
+  transform: rotate(45deg) scale(0.55);
+}
+
+.theme-toggle[data-theme="dark"] .theme-icon-sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle,
+  .theme-icon svg {
+    transition: none;
+  }
 }
 
 main {
