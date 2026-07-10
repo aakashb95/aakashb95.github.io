@@ -7,13 +7,10 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
 );
 ---
 
-<BaseLayout title="Writing" description="Thoughts, learnings, and field notes by Aakash Bakhle.">
+<BaseLayout title="zugzwang" description="Thoughts, learnings, rants">
   <header class="page-header">
-    <p class="eyebrow">Writing index / {String(posts.length).padStart(2, "0")}</p><h1>Thoughts, learnings, rants.</h1><p
-      class="page-intro"
-    >
-      Notes written to clarify what I think—usually about building software, evaluating AI, and learning in public.
-    </p>
+    <h1>zugzwang</h1>
+    <p>Thoughts, learnings, rants</p>
   </header>
   <div class="writing-list" style="margin-bottom: 8rem">
     {
@@ -22,7 +19,9 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
           <>
             <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
             <h3>{post.data.title}</h3>
-            <span class="row-arrow">↗</span>
+            <span class="row-arrow" aria-hidden="true">
+              →
+            </span>
           </>
         </a>
       ))

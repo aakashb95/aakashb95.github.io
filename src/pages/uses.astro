@@ -1,35 +1,39 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const hardware = [
-  [
-    "MacBook Pro 16″",
-    "M1 Pro and the primary development machine. Comfortable with Docker, local models, and too many windows.",
-  ],
-  ["Magic Keyboard", "A low-profile, uncluttered keyboard for long writing and coding sessions."],
-  ["LG UltraWide 34″", "A curved canvas with enough room for code, documentation, and a terminal side by side."],
-  ["Sony WH-1000XM4", "Noise cancellation for focus, with battery life that rarely becomes a consideration."],
-  ["Herman Miller Aeron", "The unglamorous but worthwhile investment in being able to sit and think comfortably."],
-];
 ---
 
-<BaseLayout title="Uses" description="Hardware, software, and tools Aakash uses.">
+<BaseLayout title="uses" description="Hardware, software, and tools I use">
   <header class="page-header">
-    <p class="eyebrow">Tools / living document</p><h1>The things behind the things.</h1><p class="page-intro">
-      A practical inventory of the hardware and software that powers my daily work.
+    <h1>uses</h1>
+    <p>
+      This page is a living document of the hardware, software, and tools that power my daily workflow. Inspired by the
+      <a href="https://uses.tech">uses.tech</a> movement, I'm sharing my setup to help others discover new tools and make
+      informed decisions about their own setups.
     </p>
   </header>
-  <section class="uses-grid">
-    <h2>Hardware</h2><div class="uses-list">
-      {
-        hardware.map(([name, description]) => (
-          <div class="uses-item">
-            <>
-              <strong>{name}</strong>
-              <p>{description}</p>
-            </>
-          </div>
-        ))
-      }
-    </div>
+  <section class="uses-copy">
+    <h2>Hardware</h2>
+    <ul>
+      <li>
+        <strong><a href="https://www.apple.com/macbook-pro/">MacBook Pro 16&quot;</a></strong> — My primary development machine
+        with M1 Pro chip. Perfect for running Docker containers, heavy IDE workloads, and multitasking across multiple projects.
+      </li>
+      <li>
+        <strong>Magic Keyboard</strong> — Apple's wireless keyboard for clean desk setup. The low-profile keys are great for
+        long coding sessions.
+      </li>
+      <li>
+        <strong>LG UltraWide Monitor 34&quot;</strong> — Curved ultrawide display that provides ample screen real estate for
+        side-by-side code editing and documentation.
+      </li>
+      <li>
+        <strong>Sony WH-1000XM4</strong> — Noise-cancelling headphones essential for focused deep work sessions. Battery life
+        lasts through multiple workdays.
+      </li>
+      <li>
+        <strong>Herman Miller Aeron Chair</strong> — Ergonomic office chair that keeps me comfortable during long coding sessions.
+        Worth the investment for back health.
+      </li>
+    </ul>
   </section>
 </BaseLayout>

@@ -22,9 +22,4 @@ interface Props {
 const { year, posts } = Astro.props;
 ---
 
-<PostArchive
-  title={`Writing from ${year}`}
-  eyebrow="Year archive"
-  description={`Field notes and essays published in ${year}.`}
-  posts={posts}
-/>
+<PostArchive title={String(year)} posts={posts} />
