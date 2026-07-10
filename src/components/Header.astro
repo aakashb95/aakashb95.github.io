@@ -17,5 +17,33 @@ const links = [
         </a>
       ))
     }
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">dark</button>
   </nav>
 </header>
+
+<script>
+  const root = document.documentElement;
+  const toggle = document.querySelector<HTMLButtonElement>("[data-theme-toggle]");
+  const themeColor = document.querySelector<HTMLMetaElement>("meta[name='theme-color']");
+
+  const currentTheme = () =>
+    root.dataset.theme ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+
+  const syncToggle = () => {
+    const theme = currentTheme();
+    if (toggle) {
+      toggle.textContent = theme === "dark" ? "light" : "dark";
+      toggle.setAttribute("aria-label", `Switch to ${theme === "dark" ? "light" : "dark"} mode`);
+    }
+    if (themeColor) themeColor.content = theme === "dark" ? "#111111" : "#ffffff";
+  };
+
+  syncToggle();
+
+  toggle?.addEventListener("click", () => {
+    const theme = currentTheme() === "dark" ? "light" : "dark";
+    root.dataset.theme = theme;
+    localStorage.setItem("theme", theme);
+    syncToggle();
+  });
+</script>

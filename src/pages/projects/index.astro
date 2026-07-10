@@ -18,6 +18,7 @@ const projects = (await getCollection("projects")).sort((a, b) => a.data.importa
           <div class="project-card-copy">
             <h2>{project.data.title}</h2>
             <p>{project.data.description}</p>
+            {project.data.status === "decommissioned" && <small class="project-status">decommissioned</small>}
           </div>
         </a>
       ))

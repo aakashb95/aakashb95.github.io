@@ -29,7 +29,7 @@ const projects = defineCollection({
     img: z.string(),
     category: z.string().default("build"),
     importance: z.coerce.number().default(2),
-    status: z.enum(["live", "experiment", "archived"]).default("live"),
+    status: z.enum(["live", "experiment", "archived", "decommissioned"]).default("live"),
     featured: z.boolean().default(false),
     live_url: z.url().optional(),
     source_url: z.url().optional(),
