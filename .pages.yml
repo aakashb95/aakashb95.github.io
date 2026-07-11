@@ -8,6 +8,29 @@ media:
     rename: safe
 
 content:
+  - name: uses
+    label: Uses
+    type: file
+    path: src/content/pages/uses.md
+    format: yaml-frontmatter
+    operations:
+      delete: false
+    fields:
+      - name: title
+        label: Page title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        required: true
+      - name: body
+        label: Content
+        type: rich-text
+        required: true
+        options:
+          media: false
+
   - name: posts
     label: Writing
     type: collection

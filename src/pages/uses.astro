@@ -1,23 +1,17 @@
 ---
+import { getCollection, render } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const usesPage = (await getCollection("pages")).find((page) => page.id === "uses");
+if (!usesPage) throw new Error("Missing Uses page content");
+const { Content } = await render(usesPage);
 ---
 
-<BaseLayout title="uses" description="Hardware, software, and tools I use">
+<BaseLayout title={usesPage.data.title} description={usesPage.data.description}>
   <header class="page-header">
-    <h1>uses</h1>
+    <h1>{usesPage.data.title}</h1>
   </header>
   <section class="uses-copy">
-    <h2>Hardware</h2>
-    <ul>
-      <li>MacBook Pro 14-inch</li>
-      <li>AirPods Pro</li>
-      <li>Ray-Ban Meta Gen 2</li>
-      <li>Apple Watch Series 3</li>
-      <li>Keychron K8</li>
-      <li>CableCreation USB hub</li>
-      <li>Wired mouse</li>
-      <li>Custom chair, bought from a warehouse in Mumbai</li>
-      <li>Table, bought from a wholesaler in Pune</li>
-    </ul>
+    <Content />
   </section>
 </BaseLayout>
