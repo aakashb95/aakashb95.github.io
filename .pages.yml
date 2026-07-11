@@ -1,3 +1,14 @@
+actions:
+  - name: deploy-site
+    label: Deploy site
+    workflow: deploy.yml
+    ref: master
+    cancelable: false
+    confirm:
+      title: Deploy site?
+      message: Build and publish the latest content from master.
+      button: Deploy
+
 media:
   - name: images
     label: Images
