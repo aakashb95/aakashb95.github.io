@@ -12,12 +12,13 @@ description: Hardware, software, and tools I use
 - CableCreation USB-C hub
 - Belkin 65W Dual USB-C charger
 - Logitech Wired mouse
-- Ergonimic chair, bought from a warehouse in Mumbai
+- Ergonomic chair, bought from a warehouse in Mumbai
 - Desk, bought from a wholesaler in Pune
 
 ## Software
 
 - Codex app
+- Zed
 - Brave browser
 - Fluidvoice - excellent WisprFlow alternative
 - Postico for postgres
