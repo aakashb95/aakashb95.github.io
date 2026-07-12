@@ -640,9 +640,7 @@ h4 {
 }
 
 .footer-meta {
-  display: flex;
   flex-shrink: 0;
-  gap: 1rem;
 }
 
 @media (max-width: 600px) {
@@ -696,10 +694,6 @@ h4 {
     align-items: flex-start;
     flex-direction: column;
     gap: 1rem;
-  }
-
-  .footer-meta {
-    flex-wrap: wrap;
   }
 }
 
