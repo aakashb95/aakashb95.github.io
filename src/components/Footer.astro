@@ -1,8 +1,6 @@
 ---
 const updatedAt = new Date();
-const year = updatedAt.getFullYear();
 const updatedLabel = new Intl.DateTimeFormat("en-IN", {
-  day: "numeric",
   month: "short",
   year: "numeric",
   timeZone: "Asia/Kolkata",
@@ -17,8 +15,5 @@ const updatedLabel = new Intl.DateTimeFormat("en-IN", {
     <a href="https://x.com/aakashb_95" rel="me">x</a>
     <a href="/rss.xml">rss</a>
   </div>
-  <div class="footer-meta">
-    <span>© {year} Aakash Bakhle</span>
-    <span>Last updated <time datetime={updatedAt.toISOString()}>{updatedLabel}</time></span>
-  </div>
+  <span class="footer-meta">Last updated <time datetime={updatedAt.toISOString()}>{updatedLabel}</time></span>
 </footer>
