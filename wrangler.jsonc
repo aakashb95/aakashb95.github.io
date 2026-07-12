@@ -4,6 +4,10 @@
   "compatibility_date": "2026-07-10",
   "routes": [
     {
+      "pattern": "aakashb.xyz/*",
+      "zone_name": "aakashb.xyz",
+    },
+    {
       "pattern": "www.aakashb.xyz/*",
       "zone_name": "aakashb.xyz",
     },
