@@ -1,3 +1,14 @@
+---
+const updatedAt = new Date();
+const year = updatedAt.getFullYear();
+const updatedLabel = new Intl.DateTimeFormat("en-IN", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+  timeZone: "Asia/Kolkata",
+}).format(updatedAt);
+---
+
 <footer class="site-footer">
   <div class="footer-links">
     <a href="mailto:aakashbakhle@gmail.com">email</a>
@@ -5,5 +16,9 @@
     <a href="https://www.linkedin.com/in/aakashb95" rel="me">linkedin</a>
     <a href="https://x.com/aakashb_95" rel="me">x</a>
     <a href="/rss.xml">rss</a>
+  </div>
+  <div class="footer-meta">
+    <span>© {year} Aakash Bakhle</span>
+    <span>Last updated <time datetime={updatedAt.toISOString()}>{updatedLabel}</time></span>
   </div>
 </footer>
