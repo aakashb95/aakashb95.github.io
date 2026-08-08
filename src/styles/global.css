@@ -592,6 +592,34 @@ h4 {
   text-align: center;
 }
 
+.prose .phone-shot {
+  max-width: 340px;
+  margin: 1.75rem auto;
+}
+
+.prose .phone-shot img,
+.prose .phone-gallery img {
+  display: block;
+  margin: 0 0 0.5rem;
+}
+
+.prose .phone-gallery {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0 0.75rem;
+  padding: 0 0 0.75rem;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scrollbar-color: var(--line) transparent;
+}
+
+.prose .phone-gallery figure {
+  flex: 0 0 min(78vw, 270px);
+  margin: 0;
+  scroll-snap-align: start;
+}
+
 .prose table {
   width: 100%;
   border-collapse: collapse;
