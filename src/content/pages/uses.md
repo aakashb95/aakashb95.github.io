@@ -11,9 +11,9 @@ description: Hardware, software, and tools I use
 - iPhone 17 pro
 - Dell S2725QC 4k Monitor
 - Keychron K8 / MX keys
+- Logitech MX Master 3S
 - CableCreation USB-C hub
 - Belkin 65W Dual USB-C charger
-- Logitech MX Master 3S
 - Ergonomic chair, bought from a warehouse in Mumbai
 - Desk, bought from a wholesaler in Pune
 
